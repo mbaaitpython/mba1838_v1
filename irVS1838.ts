@@ -278,13 +278,25 @@ namespace irVS1838 {
   //% group="Datagram"
   //% weight=30
   export function irDatagram(): string {
+
+    addressSectionBitsTmp: uint16;
+    commandSectionBitsTmp: uint16;
+
+    
     if (!irState) {
       return "0x00000000";
     }
+
+    addressSectionBitsTmp = irState.addressSectionBits;
+    commandSectionBitsTmp = irState.commandSectionBits;
+
+    irState.addressSectionBits = 0;
+    irState.commandSectionBits = 0;
+    
     return (
-      "0x" +
-      ir_rec_to16BitHex(irState.addressSectionBits) +
-      ir_rec_to16BitHex(irState.commandSectionBits)
+      "0xMBA" +
+      ir_rec_to16BitHex(addressSectionBitsTmp) +
+      ir_rec_to16BitHex(commandSectionBitsTmp)
     );
   }
 
