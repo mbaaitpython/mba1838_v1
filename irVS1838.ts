@@ -281,9 +281,7 @@ namespace irVS1838 {
 
     // addressSectionBitsTmp: uint16;
     // commandSectionBitsTmp: uint16;
-
     //       return "0x123";
-
     
     if (!irState) {
       return "0x00000000";
@@ -294,6 +292,14 @@ namespace irVS1838 {
 
     // irState.addressSectionBits = 0;
     // irState.commandSectionBits = 0;
+
+
+    return (
+      "+" +
+      ir_rec_to16BitHex(irState.addressSectionBits) +
+      ir_rec_to16BitHex(irState.commandSectionBits)
+    );
+
     
     return (
       "0xMBA" +
