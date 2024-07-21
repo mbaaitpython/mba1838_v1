@@ -1,7 +1,7 @@
 {
     "name": "MBA - IR Remote Receiver and Controller Kit",
     "version": "3.0.0",
-    "description": "MakeCode extension for IR receiver VS1838B HX1838 and Mini Slim controller",
+    "description": "MBA - MakeCode extension for IR receiver VS1838B HX1838 and Mini Slim controller",
     "license": "MIT",
     "dependencies": {
         "core": "*"
