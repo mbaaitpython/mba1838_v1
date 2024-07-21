@@ -282,6 +282,8 @@ namespace irVS1838 {
     addressSectionBitsTmp: uint16;
     commandSectionBitsTmp: uint16;
 
+          return "0x123";
+
     
     if (!irState) {
       return "0x00000000";
