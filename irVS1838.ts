@@ -45,8 +45,8 @@ namespace irVS1838 {
     }
 
     if (irState.bitsReceived === 32) {
-      irState.addressSectionBits = irState.hiword & 0xffff;
-      irState.commandSectionBits = irState.loword & 0xffff;
+      irState.addressSectionBits = irState.hiword & 0xffff & 0;
+      irState.commandSectionBits = irState.loword & 0xffff & 0x00ff;
       return IR_DATAGRAM;
     } else {
       return IR_INCOMPLETE;
@@ -279,21 +279,21 @@ namespace irVS1838 {
   //% weight=30
   export function irDatagram(): string {
 
-    addressSectionBitsTmp: uint16;
-    commandSectionBitsTmp: uint16;
+    // addressSectionBitsTmp: uint16;
+    // commandSectionBitsTmp: uint16;
 
-          return "0x123";
+    //       return "0x123";
 
     
     if (!irState) {
       return "0x00000000";
     }
 
-    addressSectionBitsTmp = irState.addressSectionBits;
-    commandSectionBitsTmp = irState.commandSectionBits;
+    // addressSectionBitsTmp = irState.addressSectionBits;
+    // commandSectionBitsTmp = irState.commandSectionBits;
 
-    irState.addressSectionBits = 0;
-    irState.commandSectionBits = 0;
+    // irState.addressSectionBits = 0;
+    // irState.commandSectionBits = 0;
     
     return (
       "0xMBA" +
